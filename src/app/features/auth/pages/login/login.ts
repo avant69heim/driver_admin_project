@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PathsEnum } from '../../../../shared/enums/paths.enum';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LoadingProvider } from '../../../../shared/providers/loading.provider';
 
 @Component({
     selector: 'app-login',
@@ -18,6 +19,7 @@ export class Login {
     constructor(
         private router: Router,
         private formBuilder: FormBuilder,
+        private loadingProvider: LoadingProvider
     ) {
         this.createForm();
     }
@@ -30,14 +32,61 @@ export class Login {
         });
     }
 
-    validateForm(): void {
+    async validateForm(): Promise<void> {
         let isInvalidForm: boolean = this.loginForm.invalid;
         if (isInvalidForm) {
             alert(`Invalid username or password`);
             return;
         }
-        this.goToDashboard();
-        this.loginForm.reset();
+
+        // Show loading while processing login
+        this.loadingProvider.show({
+            type: 'spinner',
+            text: 'Signing in to EDV Route...',
+            size: 'md',
+            overlay: true
+        });
+
+        try {
+            // Simulate API call delay
+            await this.simulateLoginProcess();
+
+            // Success - navigate to dashboard
+            this.goToDashboard();
+            this.loginForm.reset();
+
+        } catch (error) {
+            console.error('Login failed:', error);
+
+            // Show error loading briefly
+            this.loadingProvider.show({
+                type: 'dots',
+                text: 'Login failed. Please try again.',
+                size: 'md',
+                duration: 2000 // Auto-hide after 2 seconds
+            });
+
+        } finally {
+            // Hide loading after success
+            setTimeout(() => {
+                this.loadingProvider.hide();
+            }, 1000);
+        }
+    }
+
+    private simulateLoginProcess(): Promise<void> {
+        return new Promise((resolve, reject) => {
+            // Simulate network delay (1.5 seconds)
+            setTimeout(() => {
+                // 90% success rate for demo
+                if (Math.random() > 0.1) {
+                    resolve();
+                } else {
+                    reject(new Error('Invalid credentials'));
+                    this.goToDashboard();
+                }
+            }, 1500);
+        });
     }
 
     goToDashboard(): void {

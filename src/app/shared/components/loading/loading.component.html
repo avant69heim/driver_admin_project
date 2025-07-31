@@ -1,0 +1,59 @@
+<!-- Loading Overlay Container -->
+<div *ngIf="loadingState$ | async as state"
+    [class]="'loading-overlay fixed inset-0 z-50 flex transition-all duration-300 ease-in-out ' +
+           (state.isLoading ? 'opacity-100 visible' : 'opacity-0 invisible') +
+           (state.options.overlay ? ' bg-neutral-900/50 dark:bg-neutral-900/70 backdrop-blur-sm' : '') +
+           ' ' + getPositionClasses(state.options.position || 'center')">
+
+    <!-- Loading Content Container -->
+    <div class="loading-container flex flex-col items-center space-y-4 p-6 bg-neutral-0 dark:bg-neutral-800 rounded-xl shadow-2xl border border-primary-200 dark:border-primary-700 max-w-sm mx-4"
+        [class.animate-pulse]="state.options.type === 'pulse'">
+
+        <!-- Spinner Type -->
+        @if (state.options.type === 'spinner') {
+            <div [class]="'loading-spinner animate-spin rounded-full border-4 border-primary-200 border-t-primary-600 dark:border-primary-700 dark:border-t-primary-400 ' + getSizeClasses(state.options.size || 'md')"></div>
+        }
+
+        <!-- Dots Type -->
+        @if (state.options.type === 'dots') {
+            <div class="loading-dots flex space-x-2">
+                <div class="w-3 h-3 bg-primary-600 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+                <div class="w-3 h-3 bg-primary-600 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+                <div class="w-3 h-3 bg-primary-600 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+            </div>
+        }
+
+        <!-- Pulse Type -->
+        @if (state.options.type === 'pulse') {
+            <div [class]="'loading-pulse bg-primary-600 rounded-full animate-pulse ' + getSizeClasses(state.options.size || 'md')"></div>
+        }
+
+        <!-- Skeleton Type -->
+        @if (state.options.type === 'skeleton') {
+            <div class="loading-skeleton space-y-3 w-full max-w-xs">
+                <div class="skeleton-line h-4 bg-primary-200 rounded animate-pulse"></div>
+                <div class="skeleton-line h-4 bg-primary-200 rounded animate-pulse w-5/6"></div>
+                <div class="skeleton-line h-4 bg-primary-200 rounded animate-pulse w-4/6"></div>
+            </div>
+        }
+
+        <!-- Loading Text -->
+        @if (state.options.text) {
+            <div [class]="'loading-text font-medium text-primary-700 dark:text-primary-300 text-center ' + getTextSizeClasses(state.options.size || 'md')">
+                {{ state.options.text }}
+            </div>
+        }
+
+        <!-- Progress Indicator (if enabled) -->
+        @if (state.options.showProgress) {
+            <div class="loading-progress w-full">
+                <div class="w-full bg-primary-200 rounded-full h-2 dark:bg-primary-700">
+                    <div class="bg-primary-600 h-2 rounded-full dark:bg-primary-400 loading-progress-bar"
+                         style="width: 0%; animation: loading-progress 2s ease-in-out infinite;">
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
