@@ -1,0 +1,36 @@
+/* Custom styles for login inputs */
+.login-input {
+  /* Remove default browser outline and shadow */
+  box-shadow: none !important;
+  outline: none !important;
+  
+  /* When input has content (not showing placeholder) */
+  &:not(:placeholder-shown) {
+    /* Light mode - primary background when has content */
+    background-color: rgb(254 242 242) !important; /* primary-50 */
+    border-color: rgb(254 205 211) !important; /* primary-200 */
+  }
+  
+  /* Dark mode when has content */
+  @media (prefers-color-scheme: dark) {
+    &:not(:placeholder-shown) {
+      background-color: rgb(255 241 242) !important; /* primary-100 for dark mode */
+      border-color: rgb(252 165 165) !important; /* primary-300 for dark mode */
+    }
+  }
+  
+  /* Override any browser autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px rgb(254 242 242) inset !important;
+    -webkit-text-fill-color: rgb(153 27 27) !important; /* primary-800 */
+  }
+  
+  /* Remove blue outline in all browsers */
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgb(220 38 38) !important; /* primary-600 */
+  }
+}
