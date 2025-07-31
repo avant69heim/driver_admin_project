@@ -1,12 +1,36 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { OnInit } from '@angular/core';
+import { initFlowbite } from 'flowbite';
+import {Header} from "./core/components/header/header";
+
+import {Menu} from "./core/components/menu/menu";
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, Header, Menu],
+    templateUrl: './app.html',
+    styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('driver_admin_project');
+export class App implements OnInit {
+    isSidebarOpen = false;
+
+    constructor(
+        private router: Router
+    ) {
+    }
+
+    ngOnInit(): void {
+        initFlowbite();
+    }
+
+    showHeader() {
+        let isLogin: boolean = this.router.url.includes('login');
+
+        return !isLogin;
+    }
+
+    toggleSidebar(): void {
+        this.isSidebarOpen = !this.isSidebarOpen;
+    }
 }

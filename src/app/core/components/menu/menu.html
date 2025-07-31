@@ -1,0 +1,63 @@
+<!-- Sidebar -->
+<aside 
+  id="logo-sidebar" 
+  [class]="'fixed top-16 left-0 z-sidebar w-full max-w-sm md:w-64 h-screen transition-transform duration-300 ease-in-out ' + (isOpen ? 'translate-x-0' : '-translate-x-full') + ' md:translate-x-0'"
+  aria-label="Sidebar">
+  <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-50 dark:bg-neutral-800 border-r border-neutral-200 dark:border-neutral-700">
+    
+    <!-- Navigation Menu -->
+    <ul class="space-y-2 font-medium">
+      @for (item of menuItems; track item.path) {
+        <li>
+          <button 
+            type="button"
+            (click)="navigateTo(item.path)"
+            [ngClass]="{
+              'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300': isActiveRoute(item.path),
+              'text-neutral-900 hover:bg-neutral-100 dark:text-neutral-0 dark:hover:bg-neutral-700': !isActiveRoute(item.path)
+            }"
+            class="flex items-center w-full p-2 rounded-lg transition-all duration-200 ease-in-out group focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 hover:translate-x-0.5"
+            [attr.aria-current]="isActiveRoute(item.path) ? 'page' : null">
+            
+            <!-- Icon -->
+            <svg 
+              class="flex-shrink-0 w-5 h-5 transition duration-75"
+              [ngClass]="{
+                'text-primary-500 dark:text-primary-300': isActiveRoute(item.path),
+                'text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-0': !isActiveRoute(item.path)
+              }"
+              aria-hidden="true" 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="currentColor" 
+              viewBox="0 0 24 24">
+              <path [attr.d]="item.icon"/>
+            </svg>
+            
+            <!-- Label -->
+            <span class="ms-3">{{ item.label }}</span>
+          </button>
+        </li>
+      }
+    </ul>
+    
+    <!-- Bottom Section -->
+    <div class="pt-4 mt-4 space-y-2 font-medium border-t border-neutral-200 dark:border-neutral-700">
+      <!-- Logout -->
+      <button 
+        type="button"
+        class="flex items-center w-full p-2 text-neutral-900 transition duration-75 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 dark:text-neutral-0 group">
+        <svg 
+          class="flex-shrink-0 w-5 h-5 text-neutral-500 transition duration-75 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-0" 
+          aria-hidden="true" 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 18 16">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
+        </svg>
+        <span class="ms-3">Sign Out</span>
+      </button>
+    </div>
+  </div>
+</aside>
+
+
