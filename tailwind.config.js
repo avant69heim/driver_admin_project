@@ -9,6 +9,7 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
+                    "0": "#ffffff",
                     "50": "#f4e9e9",
                     "100": "#e3c9c9",
                     "200": "#d0a4a4",
@@ -54,13 +55,13 @@ module.exports = {
                     "600": "#16a34a"
                 },
                 warning: {
-                    "50": "#fffbeb", 
+                    "50": "#fffbeb",
                     "500": "#f59e0b",
                     "600": "#d97706"
                 },
                 error: {
                     "50": "#fef2f2",
-                    "500": "#ef4444", 
+                    "500": "#ef4444",
                     "600": "#dc2626"
                 }
             },
@@ -71,7 +72,7 @@ module.exports = {
                 '90': '90',
                 '100': '100',
                 'header': '50',
-                'sidebar': '45', 
+                'sidebar': '45',
                 'overlay': '40',
                 'dropdown': '60'
             },
