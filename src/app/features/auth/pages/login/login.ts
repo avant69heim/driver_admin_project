@@ -26,8 +26,8 @@ export class Login {
 
     private createForm() {
         this.loginForm = this.formBuilder.group({
-            username: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
-            password: ['', [Validators.minLength(6), Validators.maxLength(15), Validators.required]],
+            username: ['admin', [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
+            password: [123456, [Validators.minLength(6), Validators.maxLength(15), Validators.required]],
             remember: [false],
         });
     }

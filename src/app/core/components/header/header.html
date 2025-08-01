@@ -1,21 +1,21 @@
 <!-- Dashboard Admin Navbar -->
-<nav class="fixed top-0 z-header w-full bg-primary-600 border-b border-primary-700 dark:bg-primary-800 dark:border-primary-900">
+<nav class="fixed top-0 z-header w-full bg-primary-600 border-b border-primary-950 dark:bg-primary-900 dark:border-primary-950">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
                 <!-- Mobile Sidebar Toggle Button -->
-                <button 
+                <button
                     (click)="toggleSidebar()"
-                    type="button" 
+                    type="button"
                     class="inline-flex items-center p-2 text-sm text-primary-100 rounded-lg md:hidden hover:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-secondary-300 dark:text-primary-200 dark:hover:bg-primary-700 dark:focus:ring-secondary-500"
-                    aria-controls="logo-sidebar" 
+                    aria-controls="logo-sidebar"
                     [attr.aria-expanded]="isSidebarOpen">
                     <span class="sr-only">Open sidebar</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                     </svg>
                 </button>
-                
+
                 <!-- Brand/Logo -->
                 <a href="#" class="flex ms-2 md:me-24">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-8" alt="Professional Driver Logo" />
@@ -25,35 +25,35 @@
                     </span>
                 </a>
             </div>
-            
+
             <!-- Right side content -->
             <div class="flex items-center">
                 <div class="flex items-center ms-3">
                     <!-- Dark Mode Toggle -->
-                    <button 
-                        id="theme-toggle" 
-                        type="button" 
+                    <button
+                        id="theme-toggle"
+                        type="button"
                         (click)="toggleDarkMode()"
                         class="text-primary-100 dark:text-primary-200 hover:bg-primary-500 dark:hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-secondary-300 dark:focus:ring-secondary-500 rounded-lg text-sm p-2.5 me-2">
                         <span class="sr-only">Toggle dark mode</span>
-                        <svg 
-                            id="theme-toggle-dark-icon" 
-                            [class]="isDarkMode ? 'hidden w-5 h-5' : 'w-5 h-5'" 
-                            fill="currentColor" 
-                            viewBox="0 0 20 20" 
+                        <svg
+                            id="theme-toggle-dark-icon"
+                            [class]="isDarkMode ? 'hidden w-5 h-5' : 'w-5 h-5'"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
-                        <svg 
-                            id="theme-toggle-light-icon" 
-                            [class]="isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'" 
-                            fill="currentColor" 
-                            viewBox="0 0 20 20" 
+                        <svg
+                            id="theme-toggle-light-icon"
+                            [class]="isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    
+
                     <!-- Notifications (Hidden on mobile) -->
                     <button type="button" class="hidden sm:flex p-2 text-primary-100 rounded-lg hover:text-neutral-0 hover:bg-primary-500 dark:text-primary-200 dark:hover:text-neutral-0 dark:hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-secondary-300 dark:focus:ring-secondary-500">
                         <span class="sr-only">View notifications</span>
@@ -61,60 +61,51 @@
                             <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z"/>
                         </svg>
                     </button>
-                    
+
                     <!-- User Menu -->
                     <div class="relative">
-                        <button 
-                            type="button" 
-                            class="flex text-sm bg-secondary-600 rounded-full focus:ring-4 focus:ring-secondary-300 dark:focus:ring-secondary-500 ms-3 border-2 border-secondary-500" 
+                        <button
+                            type="button"
+                            class="flex text-sm bg-secondary-600 rounded-full focus:ring-4 focus:ring-secondary-300 dark:focus:ring-secondary-500 ms-3 border-2 border-secondary-500"
                             (click)="toggleUserMenu()"
                             [attr.aria-expanded]="isUserMenuOpen">
                             <span class="sr-only">Open user menu</span>
                             <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                         </button>
-                        
+
                         <!-- User Dropdown -->
-                        <div 
-                            [class]="'z-dropdown absolute right-0 mt-2 w-44 sm:w-56 text-base list-none bg-neutral-0 divide-y divide-neutral-100 rounded-lg shadow-lg dark:bg-neutral-700 dark:divide-neutral-600 ' + (isUserMenuOpen ? 'block' : 'hidden')"
+                        <div
+                            [class]="'z-dropdown absolute right-0 mt-2 w-44 sm:w-56 text-base list-none bg-primary-50 divide-y divide-primary-200 rounded-lg shadow-xl border border-primary-200 dark:bg-primary-800 dark:divide-primary-700 dark:border-primary-700 ' + (isUserMenuOpen ? 'block' : 'hidden')"
                             id="dropdown-user">
                             <div class="px-4 py-3">
-                                <p class="text-sm text-neutral-900 dark:text-neutral-0">Neil Sims</p>
-                                <p class="text-sm font-medium text-neutral-900 truncate dark:text-neutral-300">neil.sims&#64;professional-driver.com</p>
+                                <p class="text-sm text-primary-700 dark:text-neutral-0 font-semibold">Neil Sims</p>
+                                <p class="text-sm font-medium text-primary-600 truncate dark:text-neutral-200">neil.sims&#64;professional-driver.com</p>
                             </div>
-                            <ul class="py-1 font-light text-neutral-500 dark:text-neutral-400">
+                            <ul class="py-1 font-light text-primary-800 dark:text-neutral-0">
                                 <li>
-                                    <a href="#" class="block py-2 px-4 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-0">My profile</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-primary-700 hover:bg-primary-100 hover:text-primary-800 dark:text-neutral-0 dark:hover:bg-primary-900 dark:hover:text-neutral-0 transition-all duration-200">My profile</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block py-2 px-4 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-0">Account settings</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-primary-700 hover:bg-primary-100 hover:text-primary-800 dark:text-neutral-0 dark:hover:bg-primary-900 dark:hover:text-neutral-0 transition-all duration-200">Account settings</a>
                                 </li>
                             </ul>
-                            <ul class="py-1 font-light text-neutral-500 dark:text-neutral-400">
+                            <ul class="py-1 font-light text-primary-700 dark:text-neutral-0">
                                 <li>
-                                    <a href="#" class="flex items-center py-2 px-4 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-600 dark:hover:text-neutral-0">
-                                        <svg class="mr-2 w-5 h-5 text-neutral-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg> 
+                                    <a href="#" class="flex items-center py-2 px-4 text-sm text-primary-700 hover:bg-primary-100 hover:text-primary-800 dark:text-neutral-0 dark:hover:bg-primary-900 dark:hover:text-neutral-0 transition-all duration-200">
+                                        <svg class="mr-2 w-5 h-5 text-secondary-500 dark:text-secondary-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
                                         My likes
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex items-center py-2 px-4 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-600 dark:hover:text-neutral-0">
-                                        <svg class="mr-2 w-5 h-5 text-neutral-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg> 
+                                    <a href="#" class="flex items-center py-2 px-4 text-sm text-primary-700 hover:bg-primary-100 hover:text-primary-800 dark:text-neutral-0 dark:hover:bg-primary-900 dark:hover:text-neutral-0 transition-all duration-200">
+                                        <svg class="mr-2 w-5 h-5 text-secondary-500 dark:text-secondary-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
                                         Collections
                                     </a>
                                 </li>
-                                <li class="hidden sm:block">
-                                    <a href="#" class="flex justify-between items-center py-2 px-4 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-600 dark:hover:text-neutral-0 hover:text-neutral-900 dark:text-neutral-400">
-                                      <span class="flex items-center">
-                                          <svg class="mr-2 w-5 h-5 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg> 
-                                          Pro version
-                                      </span>
-                                        <svg class="w-5 h-5 text-neutral-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                    </a>
-                                </li>
                             </ul>
-                            <ul class="py-1 font-light text-neutral-500 dark:text-neutral-400">
+                            <ul class="py-1 font-light text-primary-700 dark:text-neutral-0">
                                 <li>
-                                    <a href="#" class="block py-2 px-4 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-600 dark:hover:text-neutral-0">Sign out</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-primary-700 hover:bg-primary-100 hover:text-primary-800 dark:text-neutral-0 dark:hover:bg-primary-900 dark:hover:text-neutral-0 transition-all duration-200 font-medium">Sign out</a>
                                 </li>
                             </ul>
                         </div>
