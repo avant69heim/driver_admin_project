@@ -1,0 +1,93 @@
+<!-- Settings Content Container -->
+<div class="settings-container">
+  <!-- Settings Header -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0">Settings</h1>
+    <p class="text-neutral-600 dark:text-neutral-400">Configure system parameters and operational limits</p>
+  </div>
+  
+  <!-- Statistics Cards Row -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <!-- Active Configurations Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
+          <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Configurations</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">24</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Areas Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-green-100 dark:bg-green-900">
+          <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Service Areas</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">5</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Health Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-green-100 dark:bg-green-900">
+          <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">System Health</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">100%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last Updated Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-purple-100 dark:bg-purple-900">
+          <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Last Updated</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">2h ago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Content Card -->
+  <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">System Configuration</h2>
+      <div class="flex space-x-2">
+        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+          Update Settings
+        </button>
+        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+          Backup Config
+        </button>
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors">
+          Reset Defaults
+        </button>
+      </div>
+    </div>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-4">System configuration panel with operational limits, service area definitions, and general parameters will be implemented here...</p>
+    <div class="bg-neutral-50 dark:bg-neutral-750 p-4 rounded-lg border border-neutral-200 dark:border-neutral-600">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Features: Service area limits, operational parameters, notification settings, payment configurations, API integrations, backup/restore</p>
+    </div>
+  </div>
+</div>

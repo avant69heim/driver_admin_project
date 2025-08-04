@@ -1,0 +1,93 @@
+<!-- Vehicles Content Container -->
+<div class="vehicles-container">
+  <!-- Vehicles Header -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0">Vehicles</h1>
+    <p class="text-neutral-600 dark:text-neutral-400">Manage vehicle fleet, documents, and driver assignments</p>
+  </div>
+  
+  <!-- Statistics Cards Row -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <!-- Total Vehicles Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
+          <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 16a2 2 0 11-4 0 2 2 0 014 0zM20 16a2 2 0 11-4 0 2 2 0 014 0zM5 13l1.5-4.5h11L19 13v5a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H8v1a1 1 0 01-1 1H6a1 1 0 01-1-1v-5z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Total Vehicles</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">189</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Vehicles Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-green-100 dark:bg-green-900">
+          <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Active Vehicles</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">156</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assigned Vehicles Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-purple-100 dark:bg-purple-900">
+          <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Assigned</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">134</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maintenance Due Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-orange-100 dark:bg-orange-900">
+          <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11 7h2v7h-2zM11 15h2v2h-2z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Maintenance Due</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">23</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Content Card -->
+  <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">Vehicle Management</h2>
+      <div class="flex space-x-2">
+        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+          Add Vehicle
+        </button>
+        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+          Assign Driver
+        </button>
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors">
+          Export Data
+        </button>
+      </div>
+    </div>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Vehicle fleet management with registration details, document verification, driver assignments, and maintenance tracking will be implemented here...</p>
+    <div class="bg-neutral-50 dark:bg-neutral-750 p-4 rounded-lg border border-neutral-200 dark:border-neutral-600">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Features: Add/edit vehicles, document management, driver assignment, maintenance scheduling, status tracking</p>
+    </div>
+  </div>
+</div>

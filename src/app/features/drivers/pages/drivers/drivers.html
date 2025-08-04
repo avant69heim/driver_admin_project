@@ -1,0 +1,93 @@
+<!-- Drivers Content Container -->
+<div class="drivers-container">
+  <!-- Drivers Header -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0">Drivers</h1>
+    <p class="text-neutral-600 dark:text-neutral-400">Manage driver accounts, approvals, and vehicle assignments</p>
+  </div>
+  
+  <!-- Statistics Cards Row -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <!-- Total Drivers Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
+          <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Total Drivers</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">247</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Drivers Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-green-100 dark:bg-green-900">
+          <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Active Drivers</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">198</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending Approval Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-yellow-100 dark:bg-yellow-900">
+          <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Pending Approval</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">34</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suspended Drivers Card -->
+    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+      <div class="flex items-center">
+        <div class="p-3 rounded-full bg-red-100 dark:bg-red-900">
+          <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Suspended</h3>
+          <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">15</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Content Card -->
+  <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">Driver Management</h2>
+      <div class="flex space-x-2">
+        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+          Add Driver
+        </button>
+        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+          Approve Pending
+        </button>
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors">
+          Export Data
+        </button>
+      </div>
+    </div>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Driver table with approval system, document verification, vehicle assignment, and performance tracking will be implemented here...</p>
+    <div class="bg-neutral-50 dark:bg-neutral-750 p-4 rounded-lg border border-neutral-200 dark:border-neutral-600">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Features: Driver approval/rejection, document verification, vehicle assignment, suspend/activate accounts, earnings tracking, ratings overview</p>
+    </div>
+  </div>
+</div>
