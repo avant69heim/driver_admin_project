@@ -1,16 +1,11 @@
 export const environment = {
   production: false,
-  // apiUrl: '',
-  apiUrl: 'http://localhost:3000',
-  businessName:'Professional Driver Admin',
-
-  // Date formats
-  localeDate: 'en-US',
-  formatDateServer: 'YYYY-MM-DD',
-  formatDate: 'DD/MM/YYYY',
-  formatTime: 'hh:mm a',
-  formatTimeServer: 'HH:mm',
-  formatDateTime: 'DD/MM/YYYY - hh:mm a',
-
-  paginatorLimitItems: 10,
-}
+  api: {
+    baseUrl: 'http://localhost:3000/api', // URL de tu backend con MongoDB
+  },
+  mongodb: {
+    // Tu MongoDB connection string irá aquí cuando lo tengas
+    connectionString: '', // Ejemplo: 'mongodb+srv://username:password@cluster.mongodb.net/database'
+    databaseName: 'edv_route_db'
+  }
+};
