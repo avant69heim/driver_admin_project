@@ -2,8 +2,8 @@
 <aside
   id="logo-sidebar"
   [class]="'fixed top-16 left-0 z-sidebar w-full max-w-sm md:w-64 h-screen transition-transform duration-300 ease-in-out ' + (isOpen ? 'translate-x-0' : '-translate-x-full') + ' md:translate-x-0'"
-  aria-label="Sidebar">
-  <div class="h-full px-3 py-4 overflow-y-auto bg-primary-50 dark:bg-primary-600 border-r border-primary-100 dark:border-primary-700">
+  aria-label="Barra lateral">
+      <div class="h-full px-3 py-4 overflow-y-auto bg-primary-50 dark:bg-primary-600 shadow-primary-200">
 
     <!-- Navigation Menu -->
     <ul class="space-y-2 font-medium">
@@ -13,8 +13,8 @@
             type="button"
             (click)="navigateTo(item.path)"
             [ngClass]="{
-              'bg-primary-100 text-primary-500 dark:bg-primary-700 dark:text-primary-0': isActiveRoute(item.path),
-              'text-primary-400 hover:text-primary-500 hover:bg-primary-100 dark:text-primary-50 dark:hover:text-primary-0 dark:hover:bg-primary-700': !isActiveRoute(item.path)
+              'bg-primary-100 text-gray-900 dark:bg-primary-700 dark:text-primary-0': isActiveRoute(item.path),
+              'text-gray-900 hover:text-gray-900 hover:bg-primary-100 dark:text-primary-50 dark:hover:text-primary-0 dark:hover:bg-primary-700': !isActiveRoute(item.path)
             }"
             class="flex items-center w-full p-2 rounded-lg transition-all duration-200 ease-in-out group focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 hover:translate-x-0.5"
             [attr.aria-current]="isActiveRoute(item.path) ? 'page' : null">
@@ -23,8 +23,8 @@
             <svg
               class="flex-shrink-0 w-5 h-5 transition duration-75"
               [ngClass]="{
-                'text-primary-500 dark:text-primary-0': isActiveRoute(item.path),
-                'text-primary-400 group-hover:text-primary-500 dark:text-primary-50 dark:group-hover:text-primary-0': !isActiveRoute(item.path)
+                'text-gray-900 dark:text-primary-0': isActiveRoute(item.path),
+                'text-gray-900 group-hover:text-gray-900 dark:text-primary-50 dark:group-hover:text-primary-0': !isActiveRoute(item.path)
               }"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
@@ -41,21 +41,21 @@
     </ul>
 
     <!-- Bottom Section -->
-    <div class="pt-4 mt-4 space-y-2 font-medium border-t border-neutral-200 dark:border-neutral-700">
+          <div class="pt-4 mt-4 space-y-2 font-medium border-t border-primary-200 dark:border-primary-50">
       <!-- Logout -->
       <button
         type="button"
         (click)="logout()"
-        class="flex items-center w-full p-2 text-primary-400 hover:text-primary-500 transition duration-75 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-700 dark:text-primary-50 dark:hover:text-primary-0 group">
+        class="flex items-center w-full p-2 text-gray-900 hover:text-gray-900 transition duration-75 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-700 dark:text-primary-50 dark:hover:text-primary-0 group">
         <svg
-          class="flex-shrink-0 w-5 h-5 text-primary-400 transition duration-75 group-hover:text-primary-500 dark:text-primary-50 dark:group-hover:text-primary-0"
+          class="flex-shrink-0 w-5 h-5 text-gray-900 transition duration-75 group-hover:text-gray-900 dark:text-primary-50 dark:group-hover:text-primary-0"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
           viewBox="0 0 24 24">
           <path [attr.d]="getLogoutIcon()"/>
         </svg>
-        <span class="ms-3">Sign Out</span>
+                    <span class="ms-3">Cerrar Sesión</span>
       </button>
     </div>
   </div>

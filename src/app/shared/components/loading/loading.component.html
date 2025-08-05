@@ -6,12 +6,12 @@
            ' ' + getPositionClasses(state.options.position || 'center')">
 
     <!-- Loading Content Container -->
-    <div class="loading-container flex flex-col items-center space-y-4 p-6 bg-neutral-0 dark:bg-neutral-800 rounded-xl shadow-2xl border border-primary-200 dark:border-primary-700 max-w-sm mx-4"
+    <div class="loading-container flex flex-col items-center space-y-4 p-6 bg-neutral-0 dark:bg-neutral-800 rounded-xl shadow-2xl border border-primary-200 dark:border-gray-600 max-w-sm mx-4"
         [class.animate-pulse]="state.options.type === 'pulse'">
 
         <!-- Spinner Type -->
         @if (state.options.type === 'spinner') {
-            <div [class]="'loading-spinner animate-spin rounded-full border-4 border-primary-200 border-t-primary-600 dark:border-primary-700 dark:border-t-primary-400 ' + getSizeClasses(state.options.size || 'md')"></div>
+            <div [class]="'loading-spinner animate-spin rounded-full border-4 border-primary-200 border-t-primary-600 dark:border-gray-600 dark:border-t-gray-400 ' + getSizeClasses(state.options.size || 'md')"></div>
         }
 
         <!-- Dots Type -->
@@ -47,8 +47,8 @@
         <!-- Progress Indicator (if enabled) -->
         @if (state.options.showProgress) {
             <div class="loading-progress w-full">
-                <div class="w-full bg-primary-200 rounded-full h-2 dark:bg-primary-700">
-                    <div class="bg-primary-600 h-2 rounded-full dark:bg-primary-400 loading-progress-bar"
+                <div class="w-full bg-primary-200 rounded-full h-2 dark:bg-gray-600">
+                    <div class="bg-primary-600 h-2 rounded-full dark:bg-gray-400 loading-progress-bar"
                          style="width: 0%; animation: loading-progress 2s ease-in-out infinite;">
                     </div>
                 </div>

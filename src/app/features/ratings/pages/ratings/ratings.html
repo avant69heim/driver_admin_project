@@ -2,14 +2,14 @@
 <div class="ratings-container">
   <!-- Ratings Header -->
   <div class="mb-6">
-    <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0">Ratings</h1>
-    <p class="text-neutral-600 dark:text-neutral-400">Manage customer and driver ratings with moderation capabilities</p>
+    <h1 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-0">Calificaciones</h1>
+    <p class="text-neutral-600 dark:text-neutral-400">Gestiona las calificaciones de clientes y conductores con capacidades de moderación</p>
   </div>
   
   <!-- Statistics Cards Row -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
     <!-- Average Rating Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-yellow-100 dark:bg-yellow-900">
           <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
@@ -17,14 +17,14 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Average Rating</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Calificación Promedio</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">4.7</p>
         </div>
       </div>
     </div>
 
     <!-- Total Reviews Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
           <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -32,14 +32,14 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Total Reviews</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Total de Reseñas</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">8,947</p>
         </div>
       </div>
     </div>
 
     <!-- Pending Moderation Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-orange-100 dark:bg-orange-900">
           <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 24 24">
@@ -47,14 +47,14 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Pending Review</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Reseñas Pendientes</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">23</p>
         </div>
       </div>
     </div>
 
     <!-- Low Ratings Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-red-100 dark:bg-red-900">
           <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Low Ratings (≤2)</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Calificaciones Bajas (≤2)</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">156</p>
         </div>
       </div>
@@ -70,24 +70,24 @@
   </div>
   
   <!-- Main Content Card -->
-  <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700">
+  <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">Rating Management</h2>
+      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">Gestión de Calificaciones</h2>
       <div class="flex space-x-2">
         <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
-          Filter Ratings
+          Filtrar Calificaciones
         </button>
         <button class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
           Moderate
         </button>
         <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors">
-          Export Report
+          Exportar Reporte
         </button>
       </div>
     </div>
-    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Rating and comment management system with filtering, moderation tools, and response capabilities will be implemented here...</p>
-    <div class="bg-neutral-50 dark:bg-neutral-750 p-4 rounded-lg border border-neutral-200 dark:border-neutral-600">
-      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Features: Rating overview, comment moderation, filter by rating/date/user, flag inappropriate content, driver performance tracking</p>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-4">El sistema de gestión de calificaciones y comentarios con filtrado, herramientas de moderación y capacidades de respuesta se implementará aquí...</p>
+    <div class="bg-neutral-50 dark:bg-gray-800 p-4 rounded-lg border border-neutral-200 dark:border-gray-600">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Características: Resumen de calificaciones, moderación de comentarios, filtrar por calificación/fecha/usuario, marcar contenido inapropiado, seguimiento del rendimiento del conductor</p>
     </div>
   </div>
 </div>

@@ -35,14 +35,14 @@ export class Login {
     async validateForm(): Promise<void> {
         let isInvalidForm: boolean = this.loginForm.invalid;
         if (isInvalidForm) {
-            alert(`Invalid username or password`);
+            alert(`Usuario o contraseña inválidos`);
             return;
         }
 
         // Show loading while processing login
         this.loadingProvider.show({
             type: 'spinner',
-            text: 'Signing in to EDV Route...',
+            text: 'Iniciando sesión en EDV Route...',
             size: 'md',
             overlay: true
         });
@@ -61,7 +61,7 @@ export class Login {
             // Show error loading briefly
             this.loadingProvider.show({
                 type: 'dots',
-                text: 'Login failed. Please try again.',
+                text: 'Error de inicio de sesión. Inténtalo de nuevo.',
                 size: 'md',
                 duration: 2000 // Auto-hide after 2 seconds
             });

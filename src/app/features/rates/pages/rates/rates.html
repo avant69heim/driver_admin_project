@@ -2,14 +2,14 @@
 <div class="rates-container">
   <!-- Rates Header -->
   <div class="mb-6">
-    <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0">Rates</h1>
-    <p class="text-neutral-600 dark:text-neutral-400">Configure pricing structure, zone rates, and dynamic pricing rules</p>
+    <h1 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-0">Tarifas</h1>
+    <p class="text-neutral-600 dark:text-neutral-400">Configura la estructura de precios, tarifas por zona y reglas de precios dinámicos</p>
   </div>
   
   <!-- Statistics Cards Row -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
     <!-- Base Rate Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-green-100 dark:bg-green-900">
           <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
@@ -17,14 +17,14 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Base Rate</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Tarifa Base</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">$2.50</p>
         </div>
       </div>
     </div>
 
     <!-- Per KM Rate Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
           <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -32,14 +32,14 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Per KM</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Por KM</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">$0.85</p>
         </div>
       </div>
     </div>
 
     <!-- Per Minute Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-purple-100 dark:bg-purple-900">
           <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
@@ -47,14 +47,14 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Per Minute</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Por Minuto</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">$0.20</p>
         </div>
       </div>
     </div>
 
     <!-- Active Zones Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-orange-100 dark:bg-orange-900">
           <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@
           </svg>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Active Zones</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Zonas Activas</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">12</p>
         </div>
       </div>
@@ -70,24 +70,24 @@
   </div>
   
   <!-- Main Content Card -->
-  <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700">
-    <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">Pricing Configuration</h2>
-      <div class="flex space-x-2">
-        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
-          Create Zone
+  <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
+      <h2 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-0">Configuración de Precios</h2>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm sm:text-base">
+          Crear Zona
         </button>
-        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-          Update Rates
+        <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base">
+          Actualizar Tarifas
         </button>
-        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors">
-          Export Config
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors text-sm sm:text-base">
+          Exportar Configuración
         </button>
       </div>
     </div>
-    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Rate configuration system with base rates, distance/time pricing, zone-specific rules, and dynamic pricing will be implemented here...</p>
-    <div class="bg-neutral-50 dark:bg-neutral-750 p-4 rounded-lg border border-neutral-200 dark:border-neutral-600">
-      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Features: Base rate setup, per-KM/minute pricing, zone management, time-based rates, dynamic pricing rules, promotional rates</p>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-4">El sistema de configuración de tarifas con tarifas base, precios por distancia/tiempo, reglas específicas de zona y precios dinámicos se implementará aquí...</p>
+    <div class="bg-neutral-50 dark:bg-gray-800 p-4 rounded-lg border border-neutral-200 dark:border-gray-600">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Características: Configuración de tarifa base, precios por KM/minuto, gestión de zonas, tarifas basadas en tiempo, reglas de precios dinámicos, tarifas promocionales</p>
     </div>
   </div>
 </div>

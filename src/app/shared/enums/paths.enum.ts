@@ -3,7 +3,7 @@ export enum PathsEnum {
     register = '/register',
     dashboard = '/dashboard',
     customers = '/customers',
-    drivers = '/drivers',
+    affiliates = '/affiliates',
     vehicles = '/vehicles',
     rates = '/rates',
     liveMonitoring = '/live-monitoring',

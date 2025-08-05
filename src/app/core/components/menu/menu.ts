@@ -16,62 +16,62 @@ export class Menu {
 
     menuItems = [
         {
-            label: 'Dashboard',
+            label: 'Panel Principal',
             path: PathsEnum.dashboard,
             icon: IconEnum.DASHBOARD
         },
         {
-            label: 'Customers',
+            label: 'Clientes',
             path: PathsEnum.customers,
             icon: IconEnum.CUSTOMERS
         },
         {
-            label: 'Drivers',
-            path: PathsEnum.drivers,
-            icon: IconEnum.DRIVERS
+            label: 'Afiliados',
+            path: PathsEnum.affiliates,
+            icon: IconEnum.AFFILIATES
         },
         {
-            label: 'Vehicles',
+            label: 'Vehículos',
             path: PathsEnum.vehicles,
             icon: IconEnum.VEHICLES
         },
         {
-            label: 'Rates',
+            label: 'Tarifas',
             path: PathsEnum.rates,
             icon: IconEnum.RATES
         },
         {
-            label: 'Live Monitoring',
+            label: 'Monitoreo en Vivo',
             path: PathsEnum.liveMonitoring,
             icon: IconEnum.LIVE_MONITORING
         },
         {
-            label: 'Trip History',
+            label: 'Historial de Viajes',
             path: PathsEnum.tripHistory,
             icon: IconEnum.TRIP_HISTORY
         },
         {
-            label: 'Ratings',
+            label: 'Calificaciones',
             path: PathsEnum.ratings,
             icon: IconEnum.RATINGS
         },
         {
-            label: 'Support',
+            label: 'Soporte',
             path: PathsEnum.support,
             icon: IconEnum.SUPPORT
         },
         {
-            label: 'Reports',
+            label: 'Reportes',
             path: PathsEnum.reports,
             icon: IconEnum.REPORTS
         },
         {
-            label: 'Settings',
+            label: 'Configuración',
             path: PathsEnum.settings,
             icon: IconEnum.SETTINGS
         },
         {
-            label: 'Benefits',
+            label: 'Beneficios',
             path: PathsEnum.benefits,
             icon: IconEnum.BENEFITS
         }

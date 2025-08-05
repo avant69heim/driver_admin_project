@@ -1,5 +1,5 @@
 <!-- Dashboard Admin Navbar -->
-<nav class="fixed top-0 z-header w-full bg-primary-600 border-b border-primary-50 dark:bg-primary-700 dark:border-primary-800">
+<nav class="fixed top-0 z-header w-full bg-primary-500 border-b border-primary-200 dark:bg-primary-700 dark:border-primary-50">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
@@ -10,7 +10,7 @@
                     class="inline-flex items-center p-2 text-sm text-primary-100 rounded-lg md:hidden hover:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-secondary-300 dark:text-primary-200 dark:hover:bg-primary-700 dark:focus:ring-secondary-500"
                     aria-controls="logo-sidebar"
                     [attr.aria-expanded]="isSidebarOpen">
-                    <span class="sr-only">Open sidebar</span>
+                    <span class="sr-only">Abrir barra lateral</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                     </svg>
@@ -18,10 +18,13 @@
 
                 <!-- Brand/Logo -->
                 <a href="#" class="flex ms-2 md:me-24">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-8" alt="Professional Driver Logo" />
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-8" alt="Logo Conductor Profesional" />
                     <span class="self-center text-lg sm:text-xl font-semibold whitespace-nowrap text-primary-0 dark:text-primary-50">
-                        <span class="hidden sm:inline">Professional Driver</span>
-                        <span class="sm:hidden">Pro Driver</span>
+                        <span class="hidden sm:inline">Profesionales al Volante</span>
+                        <span class="sm:hidden text-left leading-none">
+                            <span class="block text-xs font-medium">Profesionales al</span>
+                            <span class="block text-xs font-medium">Volante</span>
+                        </span>
                     </span>
                 </a>
             </div>
@@ -35,7 +38,7 @@
                         type="button"
                         (click)="toggleDarkMode()"
                         class="text-primary-0 dark:text-primary-200 hover:bg-primary-500 dark:hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-secondary-300 dark:focus:ring-secondary-500 rounded-lg text-sm p-2.5 me-2">
-                        <span class="sr-only">Toggle dark mode</span>
+                        <span class="sr-only">Alternar modo oscuro</span>
                         <svg
                             id="theme-toggle-dark-icon"
                             [class]="isDarkMode ? 'hidden w-5 h-5' : 'w-5 h-5'"
@@ -56,7 +59,7 @@
 
                     <!-- Notifications (Hidden on mobile) -->
                     <button type="button" class="hidden sm:flex p-2 text-primary-100 rounded-lg hover:text-primary-0 hover:bg-primary-500 dark:text-primary-200 dark:hover:text-primary-0 dark:hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-secondary-300 dark:focus:ring-secondary-500">
-                        <span class="sr-only">View notifications</span>
+                        <span class="sr-only">Ver notificaciones</span>
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
                             <path d="M12.133 10.632v-1.8A5.406 5.406 0 0 0 7.979 3.57.946.946 0 0 0 8 3.464V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C1.867 13.018 0 13.614 0 14.807 0 15.4 0 16 .538 16h12.924C14 16 14 15.4 14 14.807c0-1.193-1.867-1.789-1.867-4.175ZM3.823 17a3.453 3.453 0 0 0 6.354 0H3.823Z"/>
                         </svg>
@@ -69,43 +72,43 @@
                             class="flex text-sm bg-secondary-600 rounded-full focus:ring-4 focus:ring-secondary-300 dark:focus:ring-secondary-500 ms-3 border-2 border-secondary-500"
                             (click)="toggleUserMenu()"
                             [attr.aria-expanded]="isUserMenuOpen">
-                            <span class="sr-only">Open user menu</span>
-                            <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                            <span class="sr-only">Abrir menú de usuario</span>
+                            <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="foto de usuario">
                         </button>
 
                         <!-- User Dropdown -->
                         <div
-                            [class]="'z-dropdown absolute right-0 mt-2 w-44 sm:w-56 text-base list-none bg-primary-50 divide-y divide-primary-200 rounded-lg shadow-xl border border-primary-200 dark:bg-primary-600 dark:divide-primary-700 dark:border-primary-700 ' + (isUserMenuOpen ? 'block' : 'hidden')"
+                            [class]="'z-dropdown absolute right-0 mt-2 w-44 sm:w-56 text-base list-none bg-primary-50 divide-y divide-primary-200 rounded-lg shadow-xl border border-primary-200 dark:bg-gray-800 dark:divide-gray-600 dark:border-gray-600 ' + (isUserMenuOpen ? 'block' : 'hidden')"
                             id="dropdown-user">
                             <div class="px-4 py-3">
-                                <p class="text-sm text-primary-700 dark:text-primary-50 font-semibold">Neil Sims</p>
-                                <p class="text-sm font-medium text-primary-600 truncate dark:text-primary-50">neil.sims&#64;professional-driver.com</p>
+                                <p class="text-sm text-primary-700 dark:text-primary-50 font-semibold">Usuario Demo</p>
+                                <p class="text-sm font-medium text-primary-600 truncate dark:text-primary-50">usuario.demo&#64;conductor-profesional.com</p>
                             </div>
                             <ul class="py-1 font-light text-primary-800 dark:text-primary-50">
                                 <li>
-                                    <a href="#" class="block py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200">My profile</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200">Mi perfil</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200">Account settings</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200">Configuración de cuenta</a>
                                 </li>
                             </ul>
                             <ul class="py-1 font-light text-primary-400 dark:text-primary-50">
                                 <li>
                                     <a href="#" class="flex items-center py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200">
                                         <svg class="mr-2 w-5 h-5 text-primary-400 group-hover:text-primary-500 dark:text-primary-50 dark:group-hover:text-primary-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
-                                        My likes
+                                        Mis favoritos
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex items-center py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200">
                                         <svg class="mr-2 w-5 h-5 text-primary-400 group-hover:text-primary-500 dark:text-primary-50 dark:group-hover:text-primary-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
-                                        Collections
+                                        Colecciones
                                     </a>
                                 </li>
                             </ul>
                             <ul class="py-1 font-light text-primary-400 dark:text-primary-50">
                                 <li>
-                                    <a href="#" class="block py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200 font-medium">Sign out</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-primary-400 hover:bg-primary-100 hover:text-primary-500 dark:text-primary-50 dark:hover:bg-primary-700 dark:hover:text-primary-0 transition-all duration-200 font-medium">Cerrar sesión</a>
                                 </li>
                             </ul>
                         </div>

@@ -2,59 +2,59 @@
 <div class="customers-container">
   <!-- Customers Header -->
   <div class="mb-6">
-    <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0">Customers</h1>
-    <p class="text-neutral-600 dark:text-neutral-400">Manage customer accounts and view customer activity</p>
+    <h1 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-0">Clientes</h1>
+    <p class="text-neutral-600 dark:text-neutral-400">Gestiona cuentas de clientes y revisa la actividad del cliente</p>
   </div>
   
   <!-- Statistics Cards Row -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
     <!-- Total Customers Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
           <app-icon [icon]="icons.CUSTOMERS" cssClass="w-6 h-6 text-blue-600 dark:text-blue-400"/>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Total Customers</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Total de Clientes</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">1,247</p>
         </div>
       </div>
     </div>
 
     <!-- Active Customers Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-green-100 dark:bg-green-900">
           <app-icon [icon]="icons.CHECK_CIRCLE" cssClass="w-6 h-6 text-green-600 dark:text-green-400"/>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Active Customers</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Clientes Activos</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">1,089</p>
         </div>
       </div>
     </div>
 
     <!-- Suspended Customers Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-yellow-100 dark:bg-yellow-900">
           <app-icon [icon]="icons.EXCLAMATION_TRIANGLE" cssClass="w-6 h-6 text-yellow-600 dark:text-yellow-400"/>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Suspended</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Suspendidos</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">158</p>
         </div>
       </div>
     </div>
 
     <!-- New This Month Card -->
-    <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700 hover:shadow-lg transition-shadow">
+    <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
       <div class="flex items-center">
         <div class="p-3 rounded-full bg-purple-100 dark:bg-purple-900">
           <app-icon [icon]="icons.USERS" cssClass="w-6 h-6 text-purple-600 dark:text-purple-400"/>
         </div>
         <div class="ml-4">
-          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">New This Month</h3>
+          <h3 class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Nuevos Este Mes</h3>
           <p class="text-2xl font-bold text-neutral-900 dark:text-neutral-0">89</p>
         </div>
       </div>
@@ -62,21 +62,21 @@
   </div>
   
   <!-- Main Content Card -->
-  <div class="bg-neutral-0 dark:bg-neutral-800 rounded-lg shadow p-6 border border-neutral-100 dark:border-neutral-700">
-    <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl font-bold text-neutral-900 dark:text-neutral-0">Customer Management</h2>
-      <div class="flex space-x-2">
-        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
-          Add Customer
+  <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
+      <h2 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-0">Gestión de Clientes</h2>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm sm:text-base">
+          Agregar Cliente
         </button>
-        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors">
-          Export Data
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-500 transition-colors text-sm sm:text-base">
+          Exportar Datos
         </button>
       </div>
     </div>
-    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Customer table with search functionality, detailed view, and account management actions will be implemented here...</p>
-    <div class="bg-neutral-50 dark:bg-neutral-750 p-4 rounded-lg border border-neutral-200 dark:border-neutral-600">
-      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Features: Customer list, search/filter, suspend/activate accounts, customer details, trip history</p>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-4">La tabla de clientes con funcionalidad de búsqueda, vista detallada y acciones de gestión de cuentas se implementará aquí...</p>
+    <div class="bg-neutral-50 dark:bg-gray-800 p-4 rounded-lg border border-neutral-200 dark:border-gray-600">
+      <p class="text-neutral-600 dark:text-neutral-400 text-sm">Características: Lista de clientes, buscar/filtrar, suspender/activar cuentas, detalles del cliente, historial de viajes</p>
     </div>
   </div>
 </div>
