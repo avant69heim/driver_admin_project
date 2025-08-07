@@ -24,8 +24,7 @@ export class HttpService {
   });
 
   constructor() {
-    console.log('🔗 HTTP Service initialized');
-    console.log('📡 API Base URL:', this.baseUrl);
+    // HTTP Service initialized
   }
 
   // Método GET básico
@@ -56,8 +55,16 @@ export class HttpService {
     });
   }
 
-  // Test de conexión
-  testConnection(): Observable<ApiResponse<any>> {
-    return this.get('health');
+
+
+  // Método específico para autenticación de admin
+  adminLogin(credentials: { username: string; password: string }): Observable<ApiResponse<any>> {
+    return this.post('auth/admin/login', credentials);
+  }
+
+  // Método para obtener perfil de admin
+  getAdminProfile(token: string): Observable<ApiResponse<any>> {
+    const headers = this.defaultHeaders.set('Authorization', `Bearer ${token}`);
+    return this.http.get<ApiResponse<any>>(`${this.baseUrl}/auth/admin/profile`, { headers });
   }
 }

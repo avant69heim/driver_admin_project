@@ -1,11 +1,14 @@
 export const environment = {
   production: false,
   api: {
-    baseUrl: 'http://localhost:3000/api', // URL de tu backend con MongoDB
+    baseUrl: 'http://localhost:3000/api', // Backend EDV corriendo en puerto 3000
+    healthCheckUrl: 'http://localhost:3000/health', // Endpoint de health check
+  },
+  cors: {
+    origin: 'http://localhost:6500', // Puerto del frontend Angular
   },
   mongodb: {
-    // Tu MongoDB connection string irá aquí cuando lo tengas
-    connectionString: '', // Ejemplo: 'mongodb+srv://username:password@cluster.mongodb.net/database'
-    databaseName: 'edv_route_db'
+    // Configuración manejada por el backend
+    databaseName: 'edv_backend'
   }
 };

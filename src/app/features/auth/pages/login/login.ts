@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { PathsEnum } from '../../../../shared/enums/paths.enum';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoadingProvider } from '../../../../shared/providers/loading.provider';
+import { AuthService } from '../../providers/auth.service';
+import { AdminLoginRequest } from '../../../../types/backend.types';
 
 @Component({
     selector: 'app-login',
@@ -15,6 +17,7 @@ import { LoadingProvider } from '../../../../shared/providers/loading.provider';
 export class Login {
 
     loginForm: FormGroup = new FormGroup({});
+    private readonly authService = inject(AuthService);
 
     constructor(
         private router: Router,
@@ -26,8 +29,8 @@ export class Login {
 
     private createForm() {
         this.loginForm = this.formBuilder.group({
-            username: ['admin', [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
-            password: [123456, [Validators.minLength(6), Validators.maxLength(15), Validators.required]],
+            username: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required]],
+            password: ['', [Validators.minLength(6), Validators.maxLength(15), Validators.required]],
             remember: [false],
         });
     }
@@ -39,55 +42,44 @@ export class Login {
             return;
         }
 
-        // Show loading while processing login
+        // Mostrar loading mientras se procesa el login
         this.loadingProvider.show({
             type: 'spinner',
-            text: 'Iniciando sesión en EDV Route...',
+            text: 'Iniciando sesión...',
             size: 'md',
             overlay: true
         });
 
-        try {
-            // Simulate API call delay
-            await this.simulateLoginProcess();
+        const credentials: AdminLoginRequest = {
+            username: this.loginForm.value.username,
+            password: this.loginForm.value.password
+        };
 
-            // Success - navigate to dashboard
-            this.goToDashboard();
-            this.loginForm.reset();
-
-        } catch (error) {
-            console.error('Login failed:', error);
-
-            // Show error loading briefly
-            this.loadingProvider.show({
-                type: 'dots',
-                text: 'Error de inicio de sesión. Inténtalo de nuevo.',
-                size: 'md',
-                duration: 2000 // Auto-hide after 2 seconds
-            });
-
-        } finally {
-            // Hide loading after success
-            setTimeout(() => {
+        // Realizar login usando el servicio de APIs
+        this.authService.adminLogin(credentials).subscribe({
+            next: (response) => {
+                // Ocultar loading y navegar inmediatamente
                 this.loadingProvider.hide();
-            }, 1000);
-        }
-    }
-
-    private simulateLoginProcess(): Promise<void> {
-        return new Promise((resolve, reject) => {
-            // Simulate network delay (1.5 seconds)
-            setTimeout(() => {
-                // 90% success rate for demo
-                if (Math.random() > 0.1) {
-                    resolve();
-                } else {
-                    reject(new Error('Invalid credentials'));
-                    this.goToDashboard();
-                }
-            }, 1500);
+                this.goToDashboard();
+            },
+            error: (error) => {
+                // Ocultar loading de conexión
+                this.loadingProvider.hide();
+                
+                // Mostrar error específico
+                setTimeout(() => {
+                    this.loadingProvider.show({
+                        type: 'dots',
+                        text: `❌ ${error.message || 'Error de conexión con el servidor'}`,
+                        size: 'md',
+                        duration: 3000
+                    });
+                }, 100);
+            }
         });
     }
+
+
 
     goToDashboard(): void {
         this.router.navigate([PathsEnum.dashboard]);

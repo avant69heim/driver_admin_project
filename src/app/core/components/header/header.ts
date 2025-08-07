@@ -1,5 +1,8 @@
-import { Component, Output, EventEmitter, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../features/auth/providers/auth.service';
+import { PathsEnum } from '../../../shared/enums/paths.enum';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +16,9 @@ export class Header implements OnInit {
   isSidebarOpen = false;
   isUserMenuOpen = false;
   isDarkMode = false;
+
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -59,5 +65,19 @@ export class Header implements OnInit {
 
   toggleUserMenu() {
     this.isUserMenuOpen = !this.isUserMenuOpen;
+  }
+
+  /**
+   * Logout completo del sistema
+   */
+  logout(): void {
+    // Cerrar el menu de usuario
+    this.isUserMenuOpen = false;
+    
+    // Realizar logout completo
+    this.authService.logout();
+    
+    // Navegar al login
+    this.router.navigate([PathsEnum.login]);
   }
 }

@@ -1,11 +1,14 @@
 export const environment = {
   production: true,
   api: {
-    baseUrl: 'https://your-production-api.com/api', // URL de producción
+    baseUrl: 'https://your-production-api.com/api', // URL de producción del backend EDV
+    healthCheckUrl: 'https://your-production-api.com/health',
+  },
+  cors: {
+    origin: 'https://your-production-domain.com',
   },
   mongodb: {
-    // Tu MongoDB Atlas connection string para producción
-    connectionString: '', // Se configurará desde variables de entorno
-    databaseName: 'edv_route_production'
+    // Configuración manejada por el backend
+    databaseName: 'edv_backend_production'
   }
 };

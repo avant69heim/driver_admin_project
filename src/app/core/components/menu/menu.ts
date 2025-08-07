@@ -1,8 +1,9 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, inject} from '@angular/core';
 import {Router} from '@angular/router';
 import {PathsEnum} from '../../../shared/enums/paths.enum';
 import {IconEnum} from '../../../shared/enums/icon.enum';
 import {NgClass} from '@angular/common';
+import {AuthService} from '../../../features/auth/providers/auth.service';
 
 @Component({
     selector: 'app-menu',
@@ -13,6 +14,8 @@ import {NgClass} from '@angular/common';
 export class Menu {
     @Input() isOpen = false;
     @Output() closeMenu = new EventEmitter<void>();
+
+    private readonly authService = inject(AuthService);
 
     menuItems = [
         {
@@ -92,8 +95,20 @@ export class Menu {
         }
     }
 
+    /**
+     * Logout completo del sistema
+     */
     logout(): void {
-        this.router.navigate([PathsEnum.login])
+        // Cerrar el sidebar en móvil
+        if (this.isOpen && window.innerWidth < 768) {
+            this.closeMenu.emit();
+        }
+        
+        // Realizar logout completo
+        this.authService.logout();
+        
+        // Navegar al login
+        this.router.navigate([PathsEnum.login]);
     }
 
     getLogoutIcon(): string {
