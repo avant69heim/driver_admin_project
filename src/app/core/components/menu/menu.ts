@@ -24,11 +24,6 @@ export class Menu {
             icon: IconEnum.DASHBOARD
         },
         {
-            label: 'Clientes',
-            path: PathsEnum.customers,
-            icon: IconEnum.CUSTOMERS
-        },
-        {
             label: 'Afiliados',
             path: PathsEnum.affiliates,
             icon: IconEnum.AFFILIATES
@@ -52,6 +47,11 @@ export class Menu {
             label: 'Historial de Viajes',
             path: PathsEnum.tripHistory,
             icon: IconEnum.TRIP_HISTORY
+        },
+        {
+            label: 'Clientes',
+            path: PathsEnum.customers,
+            icon: IconEnum.CUSTOMERS
         },
         {
             label: 'Calificaciones',
@@ -103,10 +103,10 @@ export class Menu {
         if (this.isOpen && window.innerWidth < 768) {
             this.closeMenu.emit();
         }
-        
+
         // Realizar logout completo
         this.authService.logout();
-        
+
         // Navegar al login
         this.router.navigate([PathsEnum.login]);
     }

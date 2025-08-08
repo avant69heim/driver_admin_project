@@ -20,7 +20,7 @@ export const routes: Routes = [
     },
     {
         path: 'affiliates',
-        loadComponent: () => import('./features/affiliates/pages/affiliates/affiliates').then(m => m.Affiliates),
+        loadChildren: () => import('./features/affiliates/affiliates.routes').then(m => m.affiliatesRoutes),
     },
     {
         path: 'vehicles',

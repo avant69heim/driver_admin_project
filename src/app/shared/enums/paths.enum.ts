@@ -4,6 +4,7 @@ export enum PathsEnum {
     dashboard = '/dashboard',
     customers = '/customers',
     affiliates = '/affiliates',
+    affiliatesRegister = '/affiliates/register',
     vehicles = '/vehicles',
     rates = '/rates',
     liveMonitoring = '/live-monitoring',
