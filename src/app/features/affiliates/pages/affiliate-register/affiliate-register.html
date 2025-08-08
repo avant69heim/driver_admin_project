@@ -1,16 +1,274 @@
 <!-- Formulario de Registro de Afiliados -->
-<div class="affiliate-register-container">
-  <!-- Aquí se implementará el formulario de registro de afiliados -->
-  <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700">
-    <h1 class="text-2xl font-bold text-neutral-900 dark:text-neutral-0 mb-6">
-      Registro de Nuevo Afiliado
-    </h1>
+<div class="affiliate-register-container p-6">
+  <div class="max-w-4xl mx-auto">
     
-    <div class="bg-neutral-50 dark:bg-gray-800 p-4 rounded-lg border border-neutral-200 dark:border-gray-600">
-      <p class="text-neutral-600 dark:text-neutral-400 text-sm">
-        El formulario de registro para afiliados (conductores) se implementará aquí.
-        Incluirá datos personales, documentos, vehículo y validaciones completas.
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-0 mb-2">
+        Registro de Nuevo Afiliado
+      </h1>
+      <p class="text-neutral-600 dark:text-neutral-400">
+        Complete la información para registrar un nuevo conductor en el sistema
       </p>
     </div>
+
+    <!-- Formulario -->
+    <form [formGroup]="affiliateForm" (ngSubmit)="onSubmit()" class="space-y-8">
+      
+      <!-- Sección 1: Datos Personales Básicos -->
+      <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700">
+        <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-0 mb-6 flex items-center">
+          <svg class="w-5 h-5 mr-2 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+          </svg>
+          Datos Personales Básicos
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Primer Nombre -->
+          <div>
+            <label for="firstName" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Primer Nombre *
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              formControlName="firstName"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('firstName')"
+              placeholder="Ingrese el primer nombre">
+            @if (isFieldInvalid('firstName')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('firstName') }}
+              </div>
+            }
+          </div>
+
+          <!-- Segundo Nombre -->
+          <div>
+            <label for="secondName" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Segundo Nombre
+            </label>
+            <input
+              type="text"
+              id="secondName"
+              formControlName="secondName"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('secondName')"
+              placeholder="Ingrese el segundo nombre (opcional)">
+            @if (isFieldInvalid('secondName')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('secondName') }}
+              </div>
+            }
+          </div>
+
+          <!-- Primer Apellido -->
+          <div>
+            <label for="firstLastName" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Primer Apellido *
+            </label>
+            <input
+              type="text"
+              id="firstLastName"
+              formControlName="firstLastName"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('firstLastName')"
+              placeholder="Ingrese el primer apellido">
+            @if (isFieldInvalid('firstLastName')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('firstLastName') }}
+              </div>
+            }
+          </div>
+
+          <!-- Segundo Apellido -->
+          <div>
+            <label for="secondLastName" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Segundo Apellido *
+            </label>
+            <input
+              type="text"
+              id="secondLastName"
+              formControlName="secondLastName"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('secondLastName')"
+              placeholder="Ingrese el segundo apellido">
+            @if (isFieldInvalid('secondLastName')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('secondLastName') }}
+              </div>
+            }
+          </div>
+
+          <!-- Cédula de Identidad -->
+          <div>
+            <label for="identityCard" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Cédula de Identidad *
+            </label>
+            <input
+              type="text"
+              id="identityCard"
+              formControlName="identityCard"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('identityCard')"
+              placeholder="v-12345678 o e-123456">
+            @if (isFieldInvalid('identityCard')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('identityCard') }}
+              </div>
+            }
+          </div>
+
+          <!-- Fecha de Nacimiento -->
+          <div>
+            <label for="birthDate" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Fecha de Nacimiento *
+            </label>
+            <input
+              type="date"
+              id="birthDate"
+              formControlName="birthDate"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('birthDate')">
+            @if (isFieldInvalid('birthDate')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('birthDate') }}
+              </div>
+            }
+          </div>
+
+          <!-- Género -->
+          <div>
+            <label for="gender" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Género *
+            </label>
+            <select
+              id="gender"
+              formControlName="gender"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('gender')">
+              <option value="" disabled>Seleccione el género</option>
+              @for (gender of genderOptions; track gender) {
+                <option [value]="gender">{{ gender }}</option>
+              }
+            </select>
+            @if (isFieldInvalid('gender')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('gender') }}
+              </div>
+            }
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Email *
+            </label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('email')"
+              placeholder="ejemplo@correo.com">
+            @if (isFieldInvalid('email')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('email') }}
+              </div>
+            }
+          </div>
+
+          <!-- Teléfono -->
+          <div>
+            <label for="phone" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Teléfono *
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              formControlName="phone"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('phone')"
+              placeholder="+58412345678">
+            @if (isFieldInvalid('phone')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('phone') }}
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 2: Información de Conductor -->
+      <div class="bg-neutral-0 dark:bg-gray-900 rounded-lg shadow p-6 border border-neutral-100 dark:border-gray-700">
+        <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-0 mb-6 flex items-center">
+          <svg class="w-5 h-5 mr-2 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M8 16a2 2 0 11-4 0 2 2 0 014 0zM20 16a2 2 0 11-4 0 2 2 0 014 0zM5 13l1.5-4.5h11L19 13v5a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H8v1a1 1 0 01-1 1H6a1 1 0 01-1-1v-5z"></path>
+          </svg>
+          Información de Conductor
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Número de Licencia -->
+          <div>
+            <label for="licenseNumber" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Número de Licencia *
+            </label>
+            <input
+              type="text"
+              id="licenseNumber"
+              formControlName="licenseNumber"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('licenseNumber')"
+              placeholder="Ingrese el número de licencia">
+            @if (isFieldInvalid('licenseNumber')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('licenseNumber') }}
+              </div>
+            }
+          </div>
+
+          <!-- Fecha de Vencimiento de Licencia -->
+          <div>
+            <label for="licenseExpiry" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Fecha de Vencimiento de Licencia *
+            </label>
+            <input
+              type="date"
+              id="licenseExpiry"
+              formControlName="licenseExpiry"
+              class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+              [class.border-red-500]="isFieldInvalid('licenseExpiry')">
+            @if (isFieldInvalid('licenseExpiry')) {
+              <div class="mt-1 text-sm text-red-600">
+                {{ getFieldError('licenseExpiry') }}
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row justify-end gap-4 pt-6">
+        <button
+          type="button"
+          (click)="onCancel()"
+          class="px-6 py-3 border border-neutral-300 dark:border-gray-600 text-neutral-700 dark:text-neutral-300 rounded-lg hover:bg-neutral-50 dark:hover:bg-gray-800 focus:ring-2 focus:ring-neutral-500 focus:outline-none transition-colors">
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          [disabled]="affiliateForm.invalid">
+          <span class="flex items-center justify-center">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Registrar Afiliado
+          </span>
+        </button>
+      </div>
+    </form>
   </div>
 </div>
